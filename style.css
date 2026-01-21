@@ -17,7 +17,7 @@ body {
 header {
   background-color: #fff;
   padding: 20px 50px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -59,16 +59,21 @@ nav .nav-links a:hover {
   text-align: center;
   background-color: rgb(20,49,94);
   color: #fff;
+  padding: 0 20px;
 }
 
 #hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 3.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
 }
 
 #hero p {
-  font-size: 1.3rem;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  max-width: 640px;
+  margin: 0 auto 32px;
+  opacity: 0.9;
 }
 
 #hero .cta {
@@ -116,14 +121,12 @@ section {
 /* Service item base styles */
 .service-item {
   flex: 1 1 300px;
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  /* Scroll reveal: start hidden, moved down */
+  padding: 10px 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
   opacity: 0;
   transform: translateY(20px);
-  /* Remove default animation, will be handled by scroll reveal */
 }
 
 .service-item:nth-child(1) {
@@ -140,9 +143,7 @@ section {
 }
 
 .service-item:hover {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transform: translateY(-5px);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transform: translateY(-2px);
 }
 
 .service-item h3 {
@@ -162,6 +163,7 @@ section {
 .portfolio-item {
   flex: 1 1 300px;
   text-align: center;
+  padding-bottom: 20px;
   /* Scroll reveal: start hidden, moved down */
   opacity: 0;
   transform: translateY(20px);
@@ -240,11 +242,11 @@ section {
 
 /* Footer */
 footer {
-  background-color: #fff;
+  background-color: transparent;
   text-align: center;
-  padding: 20px;
-  border-top: 1px solid #eee;
-  color: rgb(20,49,94);
+  padding: 40px 20px;
+  color: rgba(20,49,94,0.7);
+  font-size: 0.9rem;
 }
 
 /* Animations */
