@@ -31,6 +31,7 @@ nav {
 
 nav .logo img {
   height: 80px;
+  width: auto;
 }
 
 nav .nav-links {
