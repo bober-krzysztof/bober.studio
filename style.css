@@ -1,0 +1,295 @@
+/* Reset / base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: rgb(20,49,94); /* Navy brand color */
+  background-color: #f9f9f9; /* Off-white background */
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  padding: 20px 50px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo img {
+  height: 50px;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav .nav-links a {
+  text-decoration: none;
+  color: rgb(20,49,94);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+  color: #A67B5B; /* Brązowy akcent */
+}
+
+/* Hero */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  text-align: center;
+  background-color: rgb(20,49,94);
+  color: #fff;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+#hero .cta {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #A67B5B; /* Brąz */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+#hero .cta:hover {
+  background-color: #8a654a;
+  transform: translateY(-3px);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Sections */
+section {
+  padding: 80px 50px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* About */
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Services */
+.services-grid {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Service item base styles */
+.service-item {
+  flex: 1 1 300px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  /* Scroll reveal: start hidden, moved down */
+  opacity: 0;
+  transform: translateY(20px);
+  /* Remove default animation, will be handled by scroll reveal */
+}
+
+.service-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.service-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.service-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.service-item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.service-item:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item h3 {
+  margin-bottom: 15px;
+  color: rgb(20,49,94);
+}
+
+/* Portfolio */
+.portfolio-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Portfolio item base styles */
+.portfolio-item {
+  flex: 1 1 300px;
+  text-align: center;
+  /* Scroll reveal: start hidden, moved down */
+  opacity: 0;
+  transform: translateY(20px);
+  /* Remove default animation, will be handled by scroll reveal */
+}
+
+.portfolio-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.portfolio-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.portfolio-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.portfolio-item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.portfolio-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Contact */
+#contact ul {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+#contact ul li {
+  margin-bottom: 10px;
+}
+
+#contact ul li a {
+  color: rgb(20,49,94);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+#contact input,
+#contact textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+#contact button {
+  padding: 12px;
+  border: none;
+  background-color: rgb(20,49,94);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contact button:hover {
+  background-color: #16385f;
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #eee;
+  color: rgb(20,49,94);
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Scroll Reveal Animation Classes === */
+/* Add .reveal class to elements to enable scroll reveal effect (fade-in + slide-up) */
+/* When .active is added (by JS), the element animates in */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  will-change: opacity, transform;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  nav .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .services-grid,
+  .portfolio-grid {
+    flex-direction: column;
+  }
+
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+
+  #hero p {
+    font-size: 1.1rem;
+  }
+}
