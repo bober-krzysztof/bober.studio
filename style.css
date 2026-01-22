@@ -51,6 +51,11 @@ nav .nav-links a:hover {
   color: #A67B5B; /* Brązowy akcent */
 }
 
+nav .nav-links a.active {
+  color: #A67B5B;
+  font-weight: 600;
+}
+
 /* Hero */
 #hero {
   display: flex;
@@ -126,8 +131,7 @@ section {
   background: none;
   box-shadow: none;
   border-radius: 0;
-  opacity: 0;
-  transform: translateY(20px);
+  animation: fadeSlideUp 0.6s ease-out forwards;
 }
 
 .service-item:nth-child(1) {
@@ -165,6 +169,7 @@ section {
   flex: 1 1 300px;
   text-align: center;
   padding-bottom: 20px;
+  animation: fadeSlideUp 0.6s ease-out forwards;
 }
 
 .portfolio-item:nth-child(1) {
@@ -221,6 +226,7 @@ section {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
 }
 
 #contact button {

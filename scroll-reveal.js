@@ -1,11 +1,11 @@
 // Scroll reveal animations using IntersectionObserver
-const revealElements = document.querySelectorAll('section, .reveal');
+const revealElements = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+        entry.target.classList.add('active');
       }
     });
   },
@@ -15,6 +15,5 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealElements.forEach(el => {
-  el.classList.add('reveal-init');
   revealObserver.observe(el);
 });
