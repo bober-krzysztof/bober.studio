@@ -307,6 +307,22 @@ footer {
   }
 }
 
+@keyframes pop {
+  0% {
+    transform: rotate(90deg) scale(1);
+  }
+  50% {
+    transform: rotate(90deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(90deg) scale(1);
+  }
+}
+
+.menu-toggle.active {
+  animation: pop 0.4s ease;
+}
+
 /* === Scroll Reveal Animation Classes === */
 /* Add .reveal class to elements to enable scroll reveal effect (fade-in + slide-up) */
 /* When .active is added (by JS), the element animates in */
@@ -326,6 +342,7 @@ footer {
   /* Header & Navigation */
   header {
     padding: 15px 20px;
+    border-radius: 0 0 20px 20px;
   }
 
   nav .logo img {
