@@ -79,7 +79,8 @@ nav .nav-links a.active {
   font-size: 1.2rem;
   max-width: 640px;
   margin: 0 auto 32px;
-  opacity: 0.9;
+  color: #fff;
+  opacity: 1;
 }
 
 #hero .cta {
