@@ -63,7 +63,7 @@ nav .nav-links a.active {
   justify-content: center;
   height: 90vh;
   text-align: center;
-  background-color: rgb(20,49,94);
+  background: linear-gradient(rgba(20,49,94,0.7), rgba(20,49,94,0.7)), url('assets/black-white-layers-paper-top-view.jpg') center/cover no-repeat;
   color: #fff;
   padding: 0 20px;
 }
