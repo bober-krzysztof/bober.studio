@@ -44,6 +44,7 @@ nav .logo img {
   font-size: 28px;
   color: rgb(20,49,94);
   transition: transform 0.3s ease;
+  border-radius: 8px;
 }
 
 .menu-toggle:hover {
