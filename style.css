@@ -34,6 +34,25 @@ nav .logo img {
   width: auto;
 }
 
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(20,49,94);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
 nav .nav-links {
   list-style: none;
   display: flex;
@@ -298,22 +317,203 @@ footer {
 
 /* Responsiveness */
 @media (max-width: 768px) {
+  /* Header & Navigation */
+  header {
+    padding: 15px 20px;
+  }
+
+  nav .logo img {
+    height: 60px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
   nav .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
     flex-direction: column;
-    gap: 15px;
+    gap: 0;
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  nav .nav-links.active {
+    max-height: 300px;
+  }
+
+  nav .nav-links li {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  nav .nav-links a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+
+  /* Hero Section */
+  #hero {
+    height: 50vh;
+    padding: 0 15px;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  #hero p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  #hero .cta {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+
+  /* Sections */
+  section {
+    padding: 60px 20px;
+  }
+
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  section p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Services & Portfolio Grid */
+  .services-grid,
+  .portfolio-grid {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .service-item {
+    flex: 1 1 100%;
+  }
+
+  .portfolio-item {
+    flex: 1 1 100%;
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  /* Contact Form */
+  #contact form {
+    max-width: 100%;
+  }
+
+  #contact input,
+  #contact textarea {
+    padding: 14px;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+
+  #contact textarea {
+    min-height: 120px;
+  }
+
+  #contact button {
+    padding: 14px;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 30px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  header {
+    padding: 12px 15px;
+  }
+
+  nav .logo img {
+    height: 50px;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  section p {
+    font-size: 0.95rem;
+  }
+
+  #hero {
+    height: 45vh;
+  }
+
+  #hero h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  #hero p {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  #hero .cta {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 
   .services-grid,
   .portfolio-grid {
-    flex-direction: column;
+    gap: 30px;
   }
 
-  #hero h1 {
-    font-size: 2.2rem;
+  nav .nav-links.active {
+    max-height: 250px;
   }
 
-  #hero p {
-    font-size: 1.1rem;
+  #contact ul li {
+    margin-bottom: 8px;
+  }
+
+  #contact ul li a {
+    font-size: 0.95rem;
   }
 }
 
