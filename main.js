@@ -40,7 +40,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 // Active navigation on scroll
 // ================================
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-links a');
+const navLinksElements = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
   let currentSection = '';
@@ -52,7 +52,7 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  navLinks.forEach(link => {
+  navLinksElements.forEach(link => {
     link.classList.remove('active');
     if (link.getAttribute('href') === `#${currentSection}`) {
       link.classList.add('active');
@@ -111,7 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxImg = document.querySelector('.lightbox-image');
   const closeBtn = document.querySelector('.lightbox-close');
 
-  if (!lightbox || !lightboxImg) return;
+  // Only run if lightbox elements exist
+  if (!lightbox || !lightboxImg) {
+    console.warn('Lightbox elements not found in HTML');
+    return;
+  }
 
   document.querySelectorAll('.portfolio-item img').forEach(img => {
     img.style.cursor = 'zoom-in';
