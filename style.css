@@ -165,10 +165,6 @@ section {
   flex: 1 1 300px;
   text-align: center;
   padding-bottom: 20px;
-  /* Scroll reveal: start hidden, moved down */
-  opacity: 0;
-  transform: translateY(20px);
-  /* Remove default animation, will be handled by scroll reveal */
 }
 
 .portfolio-item:nth-child(1) {
@@ -294,5 +290,52 @@ footer {
 
   #hero p {
     font-size: 1.1rem;
+  }
+}
+
+/* === Lightbox === */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 8px;
+  animation: lightboxZoom 0.35s ease;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+@keyframes lightboxZoom {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }

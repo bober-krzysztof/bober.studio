@@ -55,3 +55,66 @@ window.addEventListener('load', () => {
     logo.style.transform = 'translateY(0)';
   });
 });
+
+
+// ================================
+// Scroll reveal animations
+// ================================
+document.addEventListener('DOMContentLoaded', () => {
+  const reveals = document.querySelectorAll('.reveal');
+
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('active'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  reveals.forEach(el => observer.observe(el));
+});
+
+// ================================
+// Portfolio lightbox
+// ================================
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-image');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  if (!lightbox || !lightboxImg) return;
+
+  document.querySelectorAll('.portfolio-item img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+  };
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox || e.target === closeBtn) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+});
