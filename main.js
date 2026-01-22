@@ -1,11 +1,17 @@
 // ================================
 // Mobile hamburger menu toggle
 // ================================
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
-if (menuToggle) {
-  menuToggle.addEventListener('click', () => {
+  if (!menuToggle || !navLinks) {
+    console.warn('Menu elements not found');
+    return;
+  }
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     menuToggle.classList.toggle('active');
     navLinks.classList.toggle('active');
   });
@@ -17,7 +23,15 @@ if (menuToggle) {
       navLinks.classList.remove('active');
     });
   });
-}
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav')) {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+    }
+  });
+});
 
 // ================================
 // Smooth scroll for anchor links
