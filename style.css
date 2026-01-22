@@ -185,6 +185,7 @@ section {
   border-radius: 8px;
   margin-bottom: 10px;
   transition: transform 0.3s;
+  display: block;
 }
 
 .portfolio-item:hover img {
